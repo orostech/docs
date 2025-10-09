@@ -41,7 +41,8 @@ Retrieve all vent room posts (paginated).
         "display_name": "John Doe",
         "profile_photo": "https://api.joinhafar.com/media/photo.jpg"
       },
-      "text": "Just needed to share this...",
+      "title":"my boy"
+      "content": "Just needed to share this...",
       "media": "https://api.joinhafar.com/media/vent_media/2025/01/video.mp4",
       "media_type": "video",
       "created_at": "2025-01-17T10:30:00Z",
@@ -82,15 +83,17 @@ Create a new vent room post.
 
 **Request Body (with media):**
 ```
-text: "Sharing my thoughts today..."
+title:"Tilte"
+content: "Sharing my thoughts today..."
 media: <file>
 media_type: "image"
 ```
 
-**Request Body (text only):**
+**Request Body (title and content only):**
 ```json
 {
-  "text": "Just needed to vent about something..."
+  "title":"my boy",
+  "content": "Just needed to vent about something..."
 }
 ```
 
@@ -108,7 +111,8 @@ media_type: "image"
     "display_name": "John Doe",
     "profile_photo": "https://api.joinhafar.com/media/photo.jpg"
   },
-  "text": "Sharing my thoughts today...",
+  "title":"my boy",
+  "content": "Sharing my thoughts today...",
   "media": "https://api.joinhafar.com/media/vent_media/2025/01/image.jpg",
   "media_type": "image",
   "created_at": "2025-01-17T11:00:00Z",
@@ -128,7 +132,8 @@ When a post is created, a WebSocket event is sent to the creator:
   "data": {
     "id": 2,
     "user": {...},
-    "text": "Sharing my thoughts today...",
+    "title":"my boy",
+    "content": "Sharing my thoughts today...",
     ...
   },
   "timestamp": "2025-01-17T11:00:00Z"
@@ -186,7 +191,8 @@ Update an existing post (owner or admin only).
 **Request Body:**
 ```json
 {
-  "text": "Updated post content..."
+  "title":"my boy",
+  "content": "Updated post content..."
 }
 ```
 
@@ -195,7 +201,8 @@ Update an existing post (owner or admin only).
 {
   "id": 1,
   "user": {...},
-  "text": "Updated post content...",
+  "title":"my boy",
+  "content": "Updated post content...",
   "media": "https://api.joinhafar.com/media/vent_media/2025/01/video.mp4",
   "media_type": "video",
   "created_at": "2025-01-17T10:30:00Z",
