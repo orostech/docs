@@ -237,13 +237,40 @@ Set new password after verification.
 {
   "message": "Password reset successfully."
 }
+
 ```
 
 ---
 
+
+### 8 . Change Password
+Change password for authenticated user.
+**Endpoint:** `POST /auth/change-password/`
+**Authentication:** Required
+**Request Body:**
+```json
+{
+  "old_password": "oldpassword123",
+  "new_password": "newstrongpassword123"
+}
+``` 
+**Success Response (200):**
+```json
+{
+  "message": "Password changed successfully."
+}
+``` 
+**Error Response (400):**
+```json
+{
+  "error": "Old password is incorrect."
+}
+```
+---
+
 ## Profile Management
 
-### 8. Get Current User Profile
+### 10. Get Current User Profile
 Retrieve authenticated user's profile.
 
 **Endpoint:** `GET /profiles/me/`
@@ -296,6 +323,11 @@ Retrieve authenticated user's profile.
   "total_likes_given": 45,
   "total_visits": 89,
   "subscription": null,
+  "vanish_mode": false, // New field added (default: false),
+  "show_online_status": true, // New field added (default: true),
+  "show_last_seen": true, // New field added (default: true),
+  "show_distance": true, // New field added (default: true),
+  "profile_visibility": "VE", // New field added (default: "VE")
   "wallet": {
     "balance": "0.00"
   }
