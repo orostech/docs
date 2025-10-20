@@ -498,6 +498,18 @@ Listen to connected WebSocket server to receive real-time updates.
 
 ### Event Types
 
+| Event Type                  | Description                                                           |
+| --------------------------- | --------------------------------------------------------------------- |
+| `new_ventroom_comment`      | General new comment broadcast (used internally for system-wide sync). |
+| `new_comment_on_user_post`  | Someone commented on your post.                                       |
+| `new_reply_on_user_comment` | Someone replied to your comment.                                      |
+| `user_own_comment_created`  | You created a new comment yourself (local confirmation event).        |
+| `new_ventroom_post`         | You created a new post yourself (local confirmation event).           |
+| `new_ventroom_reaction_update` | Reaction update on your content (post or
+
+
+
+
 #### 1. New Post Event
 Triggered when a new post is created by the user.
 
