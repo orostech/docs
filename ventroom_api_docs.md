@@ -32,7 +32,7 @@ After connecting, join the general Vent Room feed to receive updates about new p
 **Client sends:**
 ```json
 {
-  "action": "join_ventroom"
+  "type": "join_ventroom"
 }
 ```
 
@@ -53,7 +53,7 @@ After connecting, join the general Vent Room feed to receive updates about new p
 **Client sends:**
 ```json
 {
-  "action": "leave_ventroom"
+  "type": "leave_ventroom"
 }
 ```
 
@@ -64,7 +64,7 @@ To receive real-time updates for a specific post (comments, reactions, etc.), jo
 **Client sends:**
 ```json
 {
-  "action": "join_ventroom_post",
+  "type": "join_ventroom_post",
   "data": {
     "post_id": 1
   }
@@ -88,7 +88,7 @@ To receive real-time updates for a specific post (comments, reactions, etc.), jo
 **Client sends:**
 ```json
 {
-  "action": "leave_ventroom_post",
+  "type": "leave_ventroom_post",
   "data": {
     "post_id": 1
   }
