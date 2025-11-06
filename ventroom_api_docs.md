@@ -748,6 +748,8 @@ If reacting to someone else's content:
 | `ventroom_joined` | Server → Client | Confirmation of joining Ventroom feed |
 | `ventroom_post_joined` | Server → Client | Confirmation of joining a specific post |
 
+
+
 ### Post Events
 
 | Event Type | Direction | Description | Broadcast To |
