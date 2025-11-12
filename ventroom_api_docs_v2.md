@@ -22,7 +22,6 @@ The Vent Room is a real-time community feature where users can share posts, comm
 ### Connecting to Vent Room
 To receive real-time updates, establish a WebSocket connection to the server.
 
-**WebSocket URL:** `wss://api.joinhafar.com/ws/`
 
 **Authentication:** Required (JWT token in connection params or headers)
 
