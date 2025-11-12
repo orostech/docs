@@ -74,12 +74,18 @@ To receive real-time updates for a specific post (comments, reactions, view coun
 **Server response:**
 ```json
 {
-  "type": "ventroom_post_joined",
+  "type": "ventroom_joined",
   "data": {
-    "post_id": 1,
-    "message": "Successfully joined Ventroom post"
+    "message": "Successfully joined Ventroom",
+    "user_id": "uuid-string",
+    "post_limit": {
+      "posts_made": 1,
+      "posts_remaining": 1,
+      "can_post": true,
+      "limit": 2
+    }
   },
-  "timestamp": "2025-01-17T10:01:00Z"
+  "timestamp": "2025-01-17T10:00:00Z"
 }
 ```
 
@@ -232,6 +238,7 @@ When a post is created, two WebSocket events are sent:
     "comment_count": 0,
     "reaction_summary": [],
     "user_reaction": null
+    
   },
   "timestamp": "2025-01-17T11:00:00Z"
 }
@@ -247,6 +254,13 @@ When a post is created, two WebSocket events are sent:
     "title": "My Story",
     "content": "Sharing my thoughts today...",
     ...
+    "post_limit": {
+      "posts_made": 2,
+      "posts_remaining": 0,
+      "can_post": false,
+      "limit": 2
+    }  //(Only if the post belongs to the creator)
+  
   },
   "timestamp": "2025-01-17T11:00:00Z"
 }
@@ -733,6 +747,65 @@ parent: null
   "user_reaction": null
 }
 ```
+
+### NEW ENDPOINTS:
+**Endpoint:** `GET /api/ventroom/posts/post_limit_status/`
+
+- Get current user's post limit status
+- Returns: {posts_made, posts_remaining, can_post, limit}
+
+### UPDATED RESPONSES:
+
+**POST /api/ventroom/posts/ - 429 Error Response:**
+```json
+{
+  "error": "Daily post limit reached",
+  "detail": "You can only create 2 posts per day. Please try again tomorrow.",
+  "posts_made": 2,
+  "posts_remaining": 0,
+  "limit": 2
+}
+```
+
+
+**GET /api/ventroom/posts/ - Now includes post_limit in response:**
+```json
+{
+  "count": 150,
+  "next": "...",
+  "previous": null,
+  "results": [...],
+  "post_limit": {
+    "posts_made": 1,
+    "posts_remaining": 1,
+    "can_post": true,
+    "limit": 2
+  }
+}
+```
+
+### WEBSOCKET EVENT UPDATES:
+
+
+**new_ventroom_post event (to creator) includes updated post_limit:**
+```json
+{
+  "type": "new_ventroom_post",
+  "data": {
+    "id": 2,
+    "user": {...},
+    "content": "...",
+    "post_limit": {
+      "posts_made": 2,
+      "posts_remaining": 0,
+      "can_post": false,
+      "limit": 2
+    }
+  },
+  "timestamp": "2025-01-17T11:00:00Z"
+}
+```
+"""
 
 **Real-time Broadcasts:**
 
