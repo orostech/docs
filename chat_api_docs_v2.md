@@ -1025,16 +1025,17 @@ The AI Chat Suggestions feature provides intelligent, context-aware conversation
 ### 21. Get Conversation Starters
 Generate AI-powered conversation starters based on the other user's profile.
 
-**Endpoint:** `GET /suggestions/?chat_id={chat_id}`
+**Endpoint:** `GET /suggestions/?chat_id={chat_id} or  /suggestions/?user_id={user_id}`
 
 **Authentication:** Required
 
 **Query Parameters:**
-- `chat_id` (required): ID of the chat with
+- `chat_id` (optional): ID of the chat with
+- `user_id` (optional): ID of the other user (if it's a new conversation)
 - `count` (optional): Number of suggestions (default: 3, max: 5)
 
 **Success Response (200):**
-```json
+```json 
 {
   "suggestions": [
     "I noticed you're into photography! What kind of shots do you enjoy taking?",
