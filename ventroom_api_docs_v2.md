@@ -112,6 +112,7 @@ Retrieve all vent room posts (paginated). **Views are automatically tracked for 
 **Authentication:** Required
 
 **Query Parameters:**
+- `category` (optional): Filter by category (e.g., `general`, `mental_health`, `relationships`, etc.)
 - `page` (optional): Page number
 - `page_size` (optional): Results per page
 
@@ -153,6 +154,19 @@ Retrieve all vent room posts (paginated). **Views are automatically tracked for 
   ]
 }
 ```
+
+### Category Types
+
+- `general` - General
+- `mental_health` - Mental Health
+- `social_connection` - Social Connection
+- `emotional_support` - Emotional Support
+- `relationships` - Relationships
+- `work` - Work
+- `family` - Family
+
+
+
 
 **Notes:**
 - Results are cached per user
