@@ -12,6 +12,7 @@ This directory contains documentation for the Hafar Gamification module. The sys
 | **Badges** | Achievement badges awarded for milestone completions (e.g., 50 posts). | [badges.md](./badges.md) |
 | **Leaderboards** | Global and categorized user rankings with percentiles. | [leaderboard.md](./leaderboard.md) |
 | **Referrals** | Ambassador program tracking, milestones, and invite generation. | [referrals.md](./referrals.md) |
+| **Ranks & Thresholds** | Documentation of subscription ranks, badge tiers, and highest milestone caps. | [ranks_and_thresholds.md](./ranks_and_thresholds.md) |
 
 ## Base Configuration
 
