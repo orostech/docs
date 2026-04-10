@@ -15,8 +15,9 @@
 | 4 | [Missions](#missions) | [missions.md](./missions.md) |
 | 5 | [Badges](#badges) | [badges.md](./badges.md) |
 | 6 | [Leaderboards](#leaderboards) | [leaderboard.md](./leaderboard.md) |
-| 7 | [Referrals](#referrals) | [referrals.md](./referrals.md) |
-| 8 | [WebSocket Reference](#websocket-reference) | — |
+| 8 | [Referrals](#referrals) | [referrals.md](./referrals.md) |
+| 9 | [Frontend Workflow FAQ](#frontend-workflow-faq) | [frontend_integration_guide.md](./frontend_integration_guide.md) |
+| 10 | [WebSocket Reference](#websocket-reference) | — |
 
 ---
 
